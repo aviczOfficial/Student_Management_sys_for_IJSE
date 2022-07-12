@@ -35,11 +35,7 @@ public class manageSubjectController {
 
     public void initialize(){
 
-        cmbTeacher.getSelectionModel().selectedItemProperty()
-                .addListener((observable, oldValue, newValue) -> {
-                    setCustomerDetails((String) newValue);
-
-                });
+       setTeacherIds();
 
         autoGenerateID();
         colSubjectID.setCellValueFactory(new PropertyValueFactory<>("subject_id"));
@@ -57,20 +53,20 @@ public class manageSubjectController {
 
     }
 
-    public  void  setCustomerIds() {
+    public  void  setTeacherIds() {
         try {
 
             ObservableList<String> cIdObList = FXCollections.observableArrayList(
-                    customerDBController.getCustomerIDs()
+                    teacherDBController.getTeacherIDs()
             );
-            cmbCustomerID.setItems(cIdObList);
+            cmbTeacher.setItems(cIdObList);
         } catch (SQLException e) {
             e.printStackTrace();
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
     }
-    }
+
 
     private void setSubjects(ArrayList<Student> customers) {
         ObservableList<Student> obList = FXCollections.observableArrayList();

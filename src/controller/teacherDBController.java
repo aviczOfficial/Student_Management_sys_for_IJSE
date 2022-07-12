@@ -8,6 +8,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
 
 public class teacherDBController {
     public static boolean addTeacher(Teacher c) throws SQLException, ClassNotFoundException {
@@ -51,4 +52,17 @@ public class teacherDBController {
         return St;
     }
 
+
+    public static List<String> getTeacherIDs() throws SQLException, ClassNotFoundException {
+        ResultSet rst = DBConnection.getInstance().
+
+                getConnection().prepareStatement("SELECT Teacher_id FROM teacher").executeQuery();
+        List<String> names = new ArrayList<>();
+        while (rst.next()) {
+            names.add(
+                    rst.getString(1)
+            );
+        }
+        return names;
+    }
 }
