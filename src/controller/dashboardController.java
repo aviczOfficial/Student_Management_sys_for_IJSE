@@ -24,10 +24,14 @@ public class dashboardController {
         paneDashboard.getChildren().add(parent);
     }
 
-    public void btnManageSubject(ActionEvent actionEvent) {
+    public void btnManageSubject(ActionEvent actionEvent) throws IOException {
+        paneDashboard.getChildren().clear();
+        Parent parent = FXMLLoader.load(getClass().getResource("../view/manageSubject.fxml"));
+        paneDashboard.getChildren().add(parent);
     }
 
     public void btnManagePayment(ActionEvent actionEvent) {
+
     }
 
     public void btnRegistration(ActionEvent actionEvent) {
