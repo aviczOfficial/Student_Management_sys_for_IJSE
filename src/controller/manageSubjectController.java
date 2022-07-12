@@ -38,10 +38,10 @@ public class manageSubjectController {
        setTeacherIds();
 
         autoGenerateID();
-        colSubjectID.setCellValueFactory(new PropertyValueFactory<>("subject_id"));
-        colSubName.setCellValueFactory(new PropertyValueFactory<>("name"));
-        colCredit.setCellValueFactory(new PropertyValueFactory<>("credit"));
-        ColTeacher.setCellValueFactory(new PropertyValueFactory<>("Teacher_id"));
+        colSubjectID.setCellValueFactory(new PropertyValueFactory<>("SubID"));
+        colSubName.setCellValueFactory(new PropertyValueFactory<>("SubName"));
+        colCredit.setCellValueFactory(new PropertyValueFactory<>("Credit"));
+        ColTeacher.setCellValueFactory(new PropertyValueFactory<>("Teacher"));
 
         try {
             setSubjects(new subjectDBController().getAllSubjects());
@@ -68,11 +68,11 @@ public class manageSubjectController {
     }
 
 
-    private void setSubjects(ArrayList<Student> customers) {
-        ObservableList<Student> obList = FXCollections.observableArrayList();
+    private void setSubjects(ArrayList<Subject> customers) {
+        ObservableList<Subject> obList = FXCollections.observableArrayList();
         customers.forEach(e->{
             obList.add(
-                    new Student(e.getStudentId(),e.getStudentName(),e.getEmail(),e.getContact(),e.getAddress(),e.getNic()));
+                    new Subject(e.getSubjectID(),e.getSubjectName(),e.getCredit(),e.getTeacherID()));
         });
         tblSubject.setItems(obList);
     }

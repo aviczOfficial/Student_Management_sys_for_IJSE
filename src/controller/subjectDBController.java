@@ -30,7 +30,7 @@ public class subjectDBController {
         }
     }
 
-    public ArrayList<Student> getAllSubjects() throws SQLException, ClassNotFoundException {
+    public ArrayList<Subject> getAllSubjects() throws SQLException, ClassNotFoundException {
         PreparedStatement stm = DBConnection.getInstance().getConnection().prepareStatement("SELECT * FROM subject");
         ResultSet rst = stm.executeQuery();
         ArrayList<Subject> St = new ArrayList<>();
