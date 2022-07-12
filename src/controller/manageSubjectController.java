@@ -6,11 +6,14 @@ import db.DBConnection;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.scene.control.Alert;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import model.Student;
+import model.Subject;
+import model.Teacher;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -20,7 +23,7 @@ import java.util.ArrayList;
 
 public class manageSubjectController {
     public JFXTextField txtSubName;
-    public JFXTextField txtDouble;
+
     public JFXTextField txtCredit;
     public TableView tblSubject;
     public TableColumn colSubjectID;
@@ -28,9 +31,15 @@ public class manageSubjectController {
     public TableColumn colCredit;
     public TableColumn ColTeacher;
     public TextField txtSubID;
-    public JFXComboBox cmbTeacher;
+    public JFXComboBox <String>cmbTeacher;
 
     public void initialize(){
+
+        cmbTeacher.getSelectionModel().selectedItemProperty()
+                .addListener((observable, oldValue, newValue) -> {
+                    setCustomerDetails((String) newValue);
+
+                });
 
         autoGenerateID();
         colSubjectID.setCellValueFactory(new PropertyValueFactory<>("subject_id"));
@@ -39,7 +48,7 @@ public class manageSubjectController {
         ColTeacher.setCellValueFactory(new PropertyValueFactory<>("Teacher_id"));
 
         try {
-            setSubjects(new studentDBController().getAllStudents());
+            setSubjects(new subjectDBController().getAllSubjects());
         } catch (SQLException e) {
             e.printStackTrace();
         } catch (ClassNotFoundException e) {
@@ -48,13 +57,28 @@ public class manageSubjectController {
 
     }
 
+    public  void  setCustomerIds() {
+        try {
+
+            ObservableList<String> cIdObList = FXCollections.observableArrayList(
+                    customerDBController.getCustomerIDs()
+            );
+            cmbCustomerID.setItems(cIdObList);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+    }
+
     private void setSubjects(ArrayList<Student> customers) {
         ObservableList<Student> obList = FXCollections.observableArrayList();
         customers.forEach(e->{
             obList.add(
                     new Student(e.getStudentId(),e.getStudentName(),e.getEmail(),e.getContact(),e.getAddress(),e.getNic()));
         });
-        tblStudent.setItems(obList);
+        tblSubject.setItems(obList);
     }
 
     public void autoGenerateID() {
@@ -90,6 +114,27 @@ public class manageSubjectController {
 
 
     public void btnAdd(ActionEvent actionEvent) {
+        Subject c = new Subject(
+                txtSubID.getText(),
+                txtSubName.getText(),
+                Double.parseDouble(txtCredit.getText()),
+                cmbTeacher.getValue()
+
+
+
+        );
+        try {
+            if (subjectDBController.addSubject(c))
+                new Alert(Alert.AlertType.CONFIRMATION, "Saved..").show();
+            else
+                new Alert(Alert.AlertType.WARNING, "Try Again..").show();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+
+        autoGenerateID();
     }
 
     public void btnUpdate(ActionEvent actionEvent) {

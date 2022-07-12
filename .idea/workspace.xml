@@ -2,19 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c66add86-9863-4025-a59e-e9f245b1046b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/controller/courseDBController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/controller/intakeDBController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/controller/manageCourseController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/controller/manageIntakeController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/controller/paymentController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/controller/paymentDBController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/controller/registraionDBController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/controller/registrationController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/controller/subjectDBController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/view/manageCourse.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/manageSubjectController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/manageSubjectController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/subjectDBController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/subjectDBController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -134,7 +122,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1657595661733</updated>
-      <workItem from="1657595669130" duration="13153000" />
+      <workItem from="1657595669130" duration="13515000" />
     </task>
     <servers />
   </component>

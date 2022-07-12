@@ -30,18 +30,17 @@ public class subjectDBController {
         }
     }
 
-    public ArrayList<Subject> getAllSubjects() throws SQLException, ClassNotFoundException {
-        PreparedStatement stm = DBConnection.getInstance().getConnection().prepareStatement("SELECT * FROM student");
+    public ArrayList<Student> getAllSubjects() throws SQLException, ClassNotFoundException {
+        PreparedStatement stm = DBConnection.getInstance().getConnection().prepareStatement("SELECT * FROM subject");
         ResultSet rst = stm.executeQuery();
-        ArrayList<Student> St = new ArrayList<>();
+        ArrayList<Subject> St = new ArrayList<>();
         while (rst.next()) {
-            St.add(new Student(
+            St.add(new Subject(
                     rst.getString(1),
                     rst.getString(2),
-                    rst.getString(3),
-                    rst.getString(4),
-                    rst.getString(5),
-                    rst.getString(6)
+                    rst.getDouble(3),
+                    rst.getString(4)
+
 
 
 
