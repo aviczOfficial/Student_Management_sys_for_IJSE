@@ -1,18 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c66add86-9863-4025-a59e-e9f245b1046b" name="Default Changelist" comment="" />
+    <list default="true" id="c66add86-9863-4025-a59e-e9f245b1046b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Database.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaFXApplication" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="2BpGYfrFTh047c4LueTLJ2BwmO5" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../java/Filmhall_booking_system" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/lib/mysql-connector-java-8.0.25.jar!/" />
+    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.proportion" value="0.15234375" />
+    <property name="project.structure.side.proportion" value="0.2" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -24,13 +65,29 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1657595661733</updated>
+      <workItem from="1657595669130" duration="1091000" />
     </task>
     <servers />
   </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
   <component name="WindowStateProjectService">
-    <state x="499" y="130" key="FileChooserDialogImpl" timestamp="1657595740265">
+    <state x="261" y="7" key="#Project_Structure" timestamp="1657596163773">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="499" y="130" key="FileChooserDialogImpl/0.0.1536.864/295.-768.1366.768@0.0.1536.864" timestamp="1657595740265" />
+    <state x="261" y="7" key="#Project_Structure/0.0.1536.864/295.-768.1366.768@0.0.1536.864" timestamp="1657596163773" />
+    <state x="361" y="82" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1657596553799">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="361" y="82" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.864/295.-768.1366.768@0.0.1536.864" timestamp="1657596553799" />
+    <state x="499" y="130" key="FileChooserDialogImpl" timestamp="1657596762971">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="499" y="130" key="FileChooserDialogImpl/0.0.1536.864/295.-768.1366.768@0.0.1536.864" timestamp="1657596762971" />
+    <state x="121" y="0" key="SettingsEditor" timestamp="1657596767877">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="121" y="0" key="SettingsEditor/0.0.1536.864/295.-768.1366.768@0.0.1536.864" timestamp="1657596767877" />
   </component>
 </project>
