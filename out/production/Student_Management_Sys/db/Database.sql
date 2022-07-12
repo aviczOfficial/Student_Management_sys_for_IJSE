@@ -9,3 +9,14 @@ create table student(
   nic varchar(45)
 
   )
+
+
+  create table teacher(
+                        Teacher_id varchar(10) PRIMARY KEY ,
+                        name varchar(10),
+                        nic varchar(45),
+                        contact varchar(10),
+                        address varchar(20)
+
+
+)

@@ -24,12 +24,16 @@
       <JFXButton buttonType="RAISED" layoutX="398.0" layoutY="243.0" onAction="#btnAdd" prefHeight="31.0" prefWidth="76.0" style="-fx-background-color: black;" text="Add" textFill="WHITE" />
       <JFXButton buttonType="RAISED" layoutX="488.0" layoutY="243.0" onAction="#btnUpdate" prefHeight="31.0" prefWidth="76.0" style="-fx-background-color: black;" text="Update" textFill="WHITE" />
       <JFXButton buttonType="RAISED" layoutX="578.0" layoutY="243.0" onAction="#btnDelete" prefHeight="31.0" prefWidth="76.0" style="-fx-background-color: black;" text="Delete" textFill="WHITE" />
-      <TableView layoutY="315.0" prefHeight="244.0" prefWidth="733.0">
+      <TableView fx:id="tblStudent" layoutY="315.0" prefHeight="244.0" prefWidth="733.0">
         <columns>
-          <TableColumn prefWidth="75.0" text="C1" />
-          <TableColumn prefWidth="75.0" text="C2" />
+          <TableColumn fx:id="colStID" prefWidth="90.0" text="StudentID" />
+          <TableColumn fx:id="colStName" prefWidth="132.0" text="StudentName" />
+            <TableColumn fx:id="colEmail" prefWidth="146.0" text="Email" />
+            <TableColumn fx:id="colContact" prefWidth="106.0" text="Contact" />
+            <TableColumn fx:id="colAddress" prefWidth="127.0" text="Address" />
+            <TableColumn fx:id="colNic" prefWidth="128.0" text="Nic" />
         </columns>
       </TableView>
-      <TextField fx:id="lblStID" layoutX="193.0" layoutY="44.0" prefHeight="31.0" prefWidth="90.0" promptText="S001" />
+      <TextField fx:id="txtStId" layoutX="193.0" layoutY="44.0" prefHeight="31.0" prefWidth="90.0" promptText="S001" />
    </children>
 </AnchorPane>

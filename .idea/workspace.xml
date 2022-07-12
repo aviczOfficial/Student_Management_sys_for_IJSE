@@ -2,13 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c66add86-9863-4025-a59e-e9f245b1046b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/controller/studentDBController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/model/Student.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Util/CrudUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/controller/manageTeacherController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/controller/teacherDBController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/model/Teacher.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/view/manageTeacher.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Student_Management_Sys/controller/manageStudentController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Student_Management_Sys/controller/manageStudentController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Student_Management_Sys/controller/studentDBController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Student_Management_Sys/controller/studentDBController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Student_Management_Sys/db/Database.sql" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Student_Management_Sys/db/Database.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Student_Management_Sys/view/manageStudent.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Student_Management_Sys/view/manageStudent.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controller/manageStudentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/manageStudentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/studentDBController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/studentDBController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/db/Database.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/db/Database.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/view/manageStudent.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/manageStudent.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -53,7 +59,9 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="2BpGYfrFTh047c4LueTLJ2BwmO5" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -65,12 +73,18 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../OshaniHibernate/Hibernate-Hostel-Management-System-" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/view" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15234375" />
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\java\Student_Management_Sys\src\view" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="controller" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\java\Student_Management_Sys\src\db" />
     </key>
@@ -121,7 +135,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1657595661733</updated>
-      <workItem from="1657595669130" duration="5295000" />
+      <workItem from="1657595669130" duration="9500000" />
     </task>
     <servers />
   </component>
@@ -137,34 +151,34 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="361" y="82" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.864/295.-768.1366.768@0.0.1536.864" timestamp="1657596553799" />
-    <state x="530" y="80" key="#com.intellij.ide.util.MemberChooser" timestamp="1657600303385">
+    <state x="530" y="80" key="#com.intellij.ide.util.MemberChooser" timestamp="1657603859628">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="530" y="80" key="#com.intellij.ide.util.MemberChooser/0.0.1536.864/295.-768.1366.768@0.0.1536.864" timestamp="1657600303385" />
-    <state x="473" y="38" key="#com.intellij.refactoring.encapsulateFields.EncalpsulateFieldsDialog" timestamp="1657600294090">
+    <state x="530" y="80" key="#com.intellij.ide.util.MemberChooser/0.0.1536.864/295.-768.1366.768@0.0.1536.864" timestamp="1657603859628" />
+    <state x="473" y="38" key="#com.intellij.refactoring.encapsulateFields.EncalpsulateFieldsDialog" timestamp="1657603846100">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="473" y="38" key="#com.intellij.refactoring.encapsulateFields.EncalpsulateFieldsDialog/0.0.1536.864/295.-768.1366.768@0.0.1536.864" timestamp="1657600294090" />
+    <state x="473" y="38" key="#com.intellij.refactoring.encapsulateFields.EncalpsulateFieldsDialog/0.0.1536.864/295.-768.1366.768@0.0.1536.864" timestamp="1657603846100" />
     <state x="499" y="130" key="FileChooserDialogImpl" timestamp="1657598477859">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="499" y="130" key="FileChooserDialogImpl/0.0.1536.864/295.-768.1366.768@0.0.1536.864" timestamp="1657598477859" />
-    <state width="1481" height="210" key="GridCell.Tab.0.bottom" timestamp="1657600981210">
+    <state width="1481" height="83" key="GridCell.Tab.0.bottom" timestamp="1657605221752">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1481" height="210" key="GridCell.Tab.0.bottom/0.0.1536.864/295.-768.1366.768@0.0.1536.864" timestamp="1657600981210" />
-    <state width="1481" height="210" key="GridCell.Tab.0.center" timestamp="1657600981210">
+    <state width="1481" height="83" key="GridCell.Tab.0.bottom/0.0.1536.864/295.-768.1366.768@0.0.1536.864" timestamp="1657605221752" />
+    <state width="1481" height="83" key="GridCell.Tab.0.center" timestamp="1657605221752">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1481" height="210" key="GridCell.Tab.0.center/0.0.1536.864/295.-768.1366.768@0.0.1536.864" timestamp="1657600981210" />
-    <state width="1481" height="210" key="GridCell.Tab.0.left" timestamp="1657600981209">
+    <state width="1481" height="83" key="GridCell.Tab.0.center/0.0.1536.864/295.-768.1366.768@0.0.1536.864" timestamp="1657605221752" />
+    <state width="1481" height="83" key="GridCell.Tab.0.left" timestamp="1657605221751">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1481" height="210" key="GridCell.Tab.0.left/0.0.1536.864/295.-768.1366.768@0.0.1536.864" timestamp="1657600981209" />
-    <state width="1481" height="210" key="GridCell.Tab.0.right" timestamp="1657600981210">
+    <state width="1481" height="83" key="GridCell.Tab.0.left/0.0.1536.864/295.-768.1366.768@0.0.1536.864" timestamp="1657605221751" />
+    <state width="1481" height="83" key="GridCell.Tab.0.right" timestamp="1657605221752">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1481" height="210" key="GridCell.Tab.0.right/0.0.1536.864/295.-768.1366.768@0.0.1536.864" timestamp="1657600981210" />
+    <state width="1481" height="83" key="GridCell.Tab.0.right/0.0.1536.864/295.-768.1366.768@0.0.1536.864" timestamp="1657605221752" />
     <state x="121" y="0" key="SettingsEditor" timestamp="1657596767877">
       <screen x="0" y="0" width="1536" height="864" />
     </state>

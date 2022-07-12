@@ -6,9 +6,13 @@ import db.DBConnection;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
-import javafx.scene.control.*;
+import javafx.scene.control.Alert;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import model.Student;
+import model.Teacher;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -16,33 +20,31 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
-public class manageStudentController {
-    public JFXTextField txtStudentName;
+public class manageTeacherController {
 
-    public JFXTextField txtEmail;
     public JFXTextField txtContact;
     public JFXTextField txtAddress;
     public JFXTextField txtNic;
-    public TextField txtStId;
-    public TableView tblStudent;
-    public TableColumn colStID;
-    public TableColumn colStName;
-    public TableColumn colEmail;
-    public TableColumn colContact;
-    public TableColumn colAddress;
+    public TableView tblTeacher;
+    public TableColumn colTeacherID;
+    public TableColumn colTeacherName;
     public TableColumn colNic;
+    public TableColumn ColContact;
+    public TableColumn colAddress;
+    public TextField txtTeacherID;
+    public JFXTextField txtTeacherName;
 
     public void initialize(){
 
         autoGenerateID();
-        colStID.setCellValueFactory(new PropertyValueFactory<>("StudentID"));
-        colStName.setCellValueFactory(new PropertyValueFactory<>("StudentName"));
-        colEmail.setCellValueFactory(new PropertyValueFactory<>("Email"));
-        colContact.setCellValueFactory(new PropertyValueFactory<>("Contact"));
-        colAddress.setCellValueFactory(new PropertyValueFactory<>("Address"));
+        colTeacherID.setCellValueFactory(new PropertyValueFactory<>("TeacherID"));
+        colTeacherName.setCellValueFactory(new PropertyValueFactory<>("TeacherName"));
         colNic.setCellValueFactory(new PropertyValueFactory<>("Nic"));
+        ColContact.setCellValueFactory(new PropertyValueFactory<>("Contact"));
+        colAddress.setCellValueFactory(new PropertyValueFactory<>("Address"));
+
         try {
-            setStudents(new studentDBController().getAllStudents());
+            setTeachers(new teacherDBController().getAllTeachers());
         } catch (SQLException e) {
             e.printStackTrace();
         } catch (ClassNotFoundException e) {
@@ -51,27 +53,19 @@ public class manageStudentController {
 
     }
 
-    private void setStudents(ArrayList< Student > customers) {
-        ObservableList<Student> obList = FXCollections.observableArrayList();
-        customers.forEach(e->{
-            obList.add(
-                    new Student(e.getStudentId(),e.getStudentName(),e.getEmail(),e.getContact(),e.getAddress(),e.getNic()));
-        });
-        tblStudent.setItems(obList);
-    }
 
     public void btnAdd(ActionEvent actionEvent) {
-        Student c = new Student(
-                txtStId.getText(),
-                txtStudentName.getText(),
-                txtEmail.getText(),
+        Teacher c = new Teacher(
+                txtTeacherID.getText(),
+                txtTeacherName.getText(),
+                txtNic.getText(),
                 txtContact.getText(),
-                txtAddress.getText(),
-                txtNic.getText()
+                txtAddress.getText()
+
 
         );
         try {
-            if (studentDBController.addStudent(c))
+            if (teacherDBController.addTeacher(c))
                 new Alert(Alert.AlertType.CONFIRMATION, "Saved..").show();
             else
                 new Alert(Alert.AlertType.WARNING, "Try Again..").show();
@@ -82,25 +76,22 @@ public class manageStudentController {
         }
 
         autoGenerateID();
-        txtStudentName.clear();
-        txtAddress.clear();
+
+        txtTeacherName.clear();
         txtAddress.clear();
         txtContact.clear();
-        txtEmail.clear();
         txtNic.clear();
         initialize();
-
-
     }
 
     public void btnUpdate(ActionEvent actionEvent) {
-        Student  c = new Student(
-                txtStId.getText(),txtStudentName.getText(),txtEmail.getText(),txtContact.getText(),
-                txtAddress.getText(),txtNic.getText()
+        Teacher  c = new Teacher(
+                txtTeacherID.getText(),txtTeacherName.getText(),txtNic.getText(),txtContact.getText(),
+                txtAddress.getText()
         );
 
         try{
-            boolean isUpdated = CrudUtil.execute("UPDATE student SET Student_name=? ,email=?,contact=? ,address=? , nic=?  WHERE Student_id=?",c.getStudentName(),c.getEmail(),c.getContact(),c.getAddress(),c.getNic(),c.getStudentId());
+            boolean isUpdated = CrudUtil.execute("UPDATE teacher SET name=? ,nic=?,contact=? ,address=?   WHERE Teacher_id=?",c.getName(),c.getName(),c.getNic(),c.getContact(),c.getAddress(),c.getTeacherId());
             if (isUpdated){
                 new Alert(Alert.AlertType.CONFIRMATION, "Updated!").show();
             }else{
@@ -111,41 +102,48 @@ public class manageStudentController {
         }catch (SQLException | ClassNotFoundException e){
 
         }
-        autoGenerateID();
-        txtStudentName.clear();
-        txtAddress.clear();
-        txtAddress.clear();
-        txtContact.clear();
-        txtEmail.clear();
-        txtNic.clear();
-        initialize();
-
 
 
     }
 
     public void btnDelete(ActionEvent actionEvent) throws SQLException, ClassNotFoundException {
-        if (new studentDBController().DeleteStudent(txtStId.getText())) {
+        if (new teacherDBController().Deleteteacher(txtTeacherID.getText())) {
             new Alert(Alert.AlertType.CONFIRMATION, "Deleted").show();
         } else {
             new Alert(Alert.AlertType.WARNING, "Try Again").show();
         }
 
         autoGenerateID();
-        txtStudentName.clear();
-        txtAddress.clear();
+
+        txtTeacherName.clear();
         txtAddress.clear();
         txtContact.clear();
-        txtEmail.clear();
         txtNic.clear();
         initialize();
     }
+
+
+
+
+    private void setTeachers(ArrayList< Teacher > teachers) {
+        ObservableList<Teacher> obList = FXCollections.observableArrayList();
+        teachers.forEach(e->{
+            obList.add(
+                    new Teacher(e.getTeacherId(),e.getName(),e.getNic(),e.getContact(),e.getAddress()));
+        });
+        tblTeacher.setItems(obList);
+    }
+
+
+
+
+
 
     public void autoGenerateID() {
         Connection connection = DBConnection.getInstance().getConnection();
         try {
             Statement statement = connection.createStatement();
-            ResultSet resultSet = statement.executeQuery("select Student_id from student order by Student_id  desc limit 1");
+            ResultSet resultSet = statement.executeQuery("select Teacher_id from teacher order by Teacher_id  desc limit 1");
             boolean isExist = resultSet.next();
             if (isExist) {
                 String olddID = resultSet.getString(1);
@@ -154,15 +152,15 @@ public class manageStudentController {
                 int intId = Integer.parseInt(id);
                 intId = intId + 1;
                 if (intId < 10) {
-                    txtStId.setText("S00" + intId);
+                    txtTeacherID.setText("T00" + intId);
                 } else if (intId < 100) {
-                    txtStId.setText("S0" + intId);
+                    txtTeacherID.setText("T0" + intId);
                 } else {
-                    txtStId.setText("S" + intId);
+                    txtTeacherID.setText("T" + intId);
                 }
             }
             else {
-               txtStId.setText("S001");
+               txtTeacherID.setText("T001");
             }
 
 
